@@ -1,0 +1,27 @@
+<%
+=begin
+%>
+<% @players.each do |player| %>
+  <li style="list-style: none"> 
+    <%= player.number %>
+    <%= player.player_name %>
+    <%= player.hand %>
+    <%= player.bat %>
+    <%= player.team %>
+  </li>
+<% end %>
+<%
+=end
+%>
+
+<%= form_with(model: @player, local: true) do |f| %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true }, class: 'form-control' %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true }, class: 'form-control' %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+  <%= f.collection_select :player_id, @players, :number, :player_name, { :include_blank => true } %>
+<% end %>
