@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
-  def index
-    @players = Player.all
+  def new
+    @players_fielder = Player.where(field: "F")
+    @players_pitcher = Player.where(field: "P")
   end
 end

@@ -1,12 +1,13 @@
 require 'csv'
 
-CSV.foreach("/Users/fengjianlengfu/Downloads/c_fielder_20210304124010.csv", headers: true) do |row|
+CSV.foreach("/Users/fengjianlengfu/Downloads/c_player_20210306131032.csv", headers: true) do |row|
   Player.create!(
     number: row[0].to_i,
     player_name: row[1],
     hand: row[2],
     bat: row[3],
-    team: row[4]
+    field: row[4],
+    team: row[5]
   )
   puts row[1]
 end

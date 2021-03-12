@@ -1,0 +1,2 @@
+class BestNine < ApplicationRecord
+end

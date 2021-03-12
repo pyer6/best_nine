@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_125119) do
+ActiveRecord::Schema.define(version: 2021_03_12_081803) do
+
+  create_table "best_nines", force: :cascade do |t|
+    t.string "title"
+    t.integer "catcher"
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "short"
+    t.integer "left"
+    t.integer "center"
+    t.integer "right"
+    t.integer "starting"
+    t.integer "relief"
+    t.integer "closer"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "players", force: :cascade do |t|
     t.integer "number"
@@ -20,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_125119) do
     t.string "team"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "field"
   end
 
 end

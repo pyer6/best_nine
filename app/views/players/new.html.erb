@@ -1,0 +1,72 @@
+<h1>ベストイレブン作成</h1>
+
+<div class="row">
+  <%= form_with(model: @player, local: true) do |f| %>
+    <table border="1">
+      <tr>
+        <th>打順</th><th>ポジション</th><th>名前</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td><%= f.select :position, {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9}, {include_blank: true}, {class: 'form-control', required: true }  %></td>
+        <td><%= f.collection_select :player_id, @players_fielder, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>先</td>
+        <td>投</td>
+        <td><%= f.collection_select :player_id, @players_pitcher, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>中</td>
+        <td>投</td>
+        <td><%= f.collection_select :player_id, @players_pitcher, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+      <tr>
+        <td>抑</td>
+        <td>投</td>
+        <td><%= f.collection_select :player_id, @players_pitcher, :id, :player_name, { :include_blank => true }, class: 'form-control' %></td>
+      </tr>
+    </table>
+  <% end %>
+
+</div>
