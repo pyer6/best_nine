@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get 'players/new'
+  root 'best_nines#index'
+  resources :best_nines,  only: [:new, :create, :destroy]
 end

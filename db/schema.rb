@@ -10,23 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_081803) do
+ActiveRecord::Schema.define(version: 2021_03_15_064014) do
 
   create_table "best_nines", force: :cascade do |t|
     t.string "title"
-    t.integer "catcher"
-    t.integer "first"
-    t.integer "second"
-    t.integer "third"
-    t.integer "short"
-    t.integer "left"
-    t.integer "center"
-    t.integer "right"
     t.integer "starting"
     t.integer "relief"
     t.integer "closer"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "one_position"
+    t.integer "one_name"
+    t.integer "two_position"
+    t.integer "two_name"
+    t.integer "three_position"
+    t.integer "three_name"
+    t.integer "four_position"
+    t.integer "four_name"
+    t.integer "five_position"
+    t.integer "five_name"
+    t.integer "six_position"
+    t.integer "six_name"
+    t.integer "seven_position"
+    t.integer "seven_name"
+    t.integer "eight_position"
+    t.integer "eight_name"
+    t.integer "nine_position"
+    t.integer "nine_name"
   end
 
   create_table "players", force: :cascade do |t|
