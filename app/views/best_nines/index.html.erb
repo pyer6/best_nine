@@ -1,5 +1,8 @@
 <div class="row">
   <h1>ベストイレブン一覧</h1>
+  <% @players.each do |player| %>
+    <%= player.league %>
+  <% end %>
 
   <% @bestnines.each do |bestnine| %>
     <div class="col-sm-4">

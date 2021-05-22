@@ -16,12 +16,13 @@ class BestNinesController < ApplicationController
     @players_pitcher = Player.where(field: "P")
 
     # ポジション/選手に重複があるかの確認
-    best_nine_position_player = params[:best_nine].values[1..-4]
+    
+    field_player = params[:best_nine].values[1..-4]
     pitcher = params[:best_nine].values[-3..-1]
-  
-    position = best_nine_position_player.each_slice(2).map(&:first).push(pitcher) # {|n| n.first}
-    position.flatten!
-    player = best_nine_position_player.each_slice(2).map(&:last)
+
+    position = field_player.each_slice(2).map(&:first) # {|n| n.first}
+    player = field_player.each_slice(2).map(&:last).push(pitcher)
+    player.flatten!
 
     if ((position.count - position.uniq.count) != 0 || (player.count - player.uniq.count) != 0)
       flash[:danger] = "ポジションまたは選手が重複しています。"
