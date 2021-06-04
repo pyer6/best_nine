@@ -1,0 +1,20 @@
+<% provide(:title, "ログイン")%>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %> 
+
+      <div class="form_field">
+        <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+      </div>
+      
+      <div class="form_field">
+        <%= f.password_field :password, class: 'form-control', placeholder: "パスワード(半角英数字8~32文字)" %>
+      </div>
+      
+      <div class="form_field">
+        <%= f.submit "ログイン", class: "form-control btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

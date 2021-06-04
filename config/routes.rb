@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  # get 'users/new'
-  # get 'users/show'
   root 'best_nines#index'
-  resources :best_nines,  only: [:new, :create, :destroy]
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
   resources :users
+  resources :best_nines,  only: [:new, :create, :destroy]
 end

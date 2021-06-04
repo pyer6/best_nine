@@ -1,5 +1,14 @@
+<% provide(:title, "ホーム") %>
+
 <div class="row">
-  <h1>ベストイレブン一覧</h1>
+  <div class="center jumbotron">
+    <h1>ベストイレブン一覧</h1>
+    <% if logged_in? %>
+      <%= link_to "マイナイン作成", "#" %>
+    <% else %>
+      <%= link_to "ログイン", login_path %>
+    <% end %>
+  </div>
   <% @players.each do |player| %>
     <%= player.league %>
   <% end %>
