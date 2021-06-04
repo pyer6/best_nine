@@ -1,29 +1,10 @@
-<% provide(:title, "ユーザー作成")%>
+<% provide(:title, "ユーザー作成") %>
+<% provide(:submit, "登録する") %>
+
+<h1>ユーザー作成</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %> 
-			<%= render 'shared/error_messages', model: f.object %>
-      
-      <div class="form_field">
-        <%= f.text_field :name, class: 'form-control', placeholder: "ユーザーネーム" %>
-      </div>
-
-      <div class="form_field">
-        <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
-      </div>
-      
-      <div class="form_field">
-        <%= f.password_field :password, class: 'form-control', placeholder: "パスワード(半角英数字8~32文字)" %>
-      </div>
-      
-      <div class="form_field">
-        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワード(確認用)" %>
-      </div>
-      
-      <div class="form_field">
-        <%= f.submit "登録する", class: "form-control btn btn-primary" %>
-      </div>
-    <% end %>
+    <%= render "form" %>
   </div>
 </div>
