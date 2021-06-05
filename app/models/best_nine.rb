@@ -1,4 +1,8 @@
 class BestNine < ApplicationRecord
+  belongs_to :user
+  validates :user_id, presence: true
+  default_scope -> {order(created_at: :desc)}
+
   validates :title, presence: true, length:{maximum: 30}
   validates :one_position, presence: true
   validates :one_name, presence: true
