@@ -1,0 +1,14 @@
+<% provide(:title, "マイナイン詳細") %>
+
+<div class="row">
+
+  <div class="col-sm-4 nine_table">
+    <table border="1">
+      <caption><%= @best_nine.title %></caption>
+      <%= render "shared/mynine_table", best_nine: @best_nine %>
+    </table>
+    <% if logged_in? && current_user?(current_user)%>
+      <%= link_to "削除", @best_nine, method: :delete, data: {confirm: "本当によろしいですか？"}  %>
+    <% end %>
+  </div>
+</div>

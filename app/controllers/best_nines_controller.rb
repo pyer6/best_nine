@@ -1,6 +1,13 @@
 class BestNinesController < ApplicationController
+  before_action :require_user_logged_in, only: [:new, :create, :destroy]
+
   def index
     @best_nines = BestNine.paginate(page: params[:page], per_page: 2)
+    @players = Player.all
+  end
+
+  def show
+    @best_nine = BestNine.find(params[:id])
     @players = Player.all
   end
 
@@ -29,12 +36,19 @@ class BestNinesController < ApplicationController
       render :new
     elsif @bestnine.save
       flash[:success] = "ベストナインを作成しました。"
-      redirect_to root_path
+      redirect_to root_url
     else
       flash[:danger] = "保存に失敗しました。"
       render :new
     end
   end
+
+  def destroy
+    BestNine.find(params[:id]).destroy
+    flash[:success] = "削除しました。"
+    redirect_to root_url
+  end
+
 
 
   private
@@ -42,5 +56,11 @@ class BestNinesController < ApplicationController
       params.require(:best_nine).permit(:title, :one_position, :one_name, :two_position, :two_name, :three_position, :three_name, :four_position, :four_name,
                                         :five_position, :five_name, :six_position, :six_name, :seven_position, :seven_name, :eight_position, :eight_name,
                                         :nine_position, :nine_name, :starting, :relief, :closer, :user_id)
+    end
+
+    def require_user_logged_in
+      unless logged_in?
+        redirect_to root_url
+      end
     end
 end

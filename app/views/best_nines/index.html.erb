@@ -1,4 +1,5 @@
 <% provide(:title, "ホーム") %>
+<%# provide(:best_nine, bestnine) %>
 
 <div class="row">
   <div class="center jumbotron">
@@ -10,73 +11,11 @@
     <% end %>
   </div>
 
-  <% @best_nines.each do |bestnine| %>
+  <% @best_nines.each do |best_nine| %>
     <div class="col-sm-4 nine_table">
       <table border="1">
-        <caption><%= bestnine.title %></caption>
-        <tr>
-          <th>打順</th><th>ポジション</th><th>名前</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td><%= BestNine::POSITION.key(bestnine.one_position) %></td>
-          <td><%= @players.find(bestnine.one_name).player_name %></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td><%= BestNine::POSITION.key(bestnine.two_position) %></td>
-          <td><%= @players.find(bestnine.two_name).player_name %></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td><%= BestNine::POSITION.key(bestnine.three_position) %></td>
-          <td><%= @players.find(bestnine.three_name).player_name %></td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td><%= BestNine::POSITION.key(bestnine.four_position) %></td>
-          <td><%= @players.find(bestnine.four_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>5</td>
-          <td><%= BestNine::POSITION.key(bestnine.five_position) %></td>
-          <td><%= @players.find(bestnine.five_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>6</td>
-          <td><%= BestNine::POSITION.key(bestnine.six_position) %></td>
-          <td><%= @players.find(bestnine.six_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>7</td>
-          <td><%= BestNine::POSITION.key(bestnine.seven_position) %></td>
-          <td><%= @players.find(bestnine.seven_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>8</td>
-          <td><%= BestNine::POSITION.key(bestnine.eight_position) %></td>
-          <td><%= @players.find(bestnine.eight_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>9</td>
-          <td><%= BestNine::POSITION.key(bestnine.nine_position) %></td>
-          <td><%= @players.find(bestnine.nine_name).player_name %></td>
-        </tr> 
-        <tr>
-          <td>先</td>
-          <td>投</td>
-          <td><%= @players.find(bestnine.starting).player_name %></td>
-        </tr>
-        <tr>
-          <td>中</td>
-          <td>投</td>
-          <td><%= @players.find(bestnine.relief).player_name %></td>
-        </tr>
-        <tr>
-          <td>抑</td>
-          <td>投</td>
-          <td><%= @players.find(bestnine.closer).player_name %></td>
-        </tr>
+        <caption><%= link_to best_nine.title,  best_nine%></caption>
+        <%= render "shared/mynine_table", best_nine: best_nine %>
       </table>
     </div>
   <% end %>

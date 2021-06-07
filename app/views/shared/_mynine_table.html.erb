@@ -1,0 +1,64 @@
+
+<tr>
+  <th>打順</th><th>ポジション</th><th>名前</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td><%= BestNine::POSITION.key(best_nine.one_position) %></td>
+  <td><%= @players.find(best_nine.one_name).player_name %></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><%= BestNine::POSITION.key(best_nine.two_position) %></td>
+  <td><%= @players.find(best_nine.two_name).player_name %></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><%= BestNine::POSITION.key(best_nine.three_position) %></td>
+  <td><%= @players.find(best_nine.three_name).player_name %></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><%= BestNine::POSITION.key(best_nine.four_position) %></td>
+  <td><%= @players.find(best_nine.four_name).player_name %></td>
+</tr> 
+<tr>
+  <td>5</td>
+  <td><%= BestNine::POSITION.key(best_nine.five_position) %></td>
+  <td><%= @players.find(best_nine.five_name).player_name %></td>
+</tr> 
+<tr>
+  <td>6</td>
+  <td><%= BestNine::POSITION.key(best_nine.six_position) %></td>
+  <td><%= @players.find(best_nine.six_name).player_name %></td>
+</tr> 
+<tr>
+  <td>7</td>
+  <td><%= BestNine::POSITION.key(best_nine.seven_position) %></td>
+  <td><%= @players.find(best_nine.seven_name).player_name %></td>
+</tr> 
+<tr>
+  <td>8</td>
+  <td><%= BestNine::POSITION.key(best_nine.eight_position) %></td>
+  <td><%= @players.find(best_nine.eight_name).player_name %></td>
+</tr> 
+<tr>
+  <td>9</td>
+  <td><%= BestNine::POSITION.key(best_nine.nine_position) %></td>
+  <td><%= @players.find(best_nine.nine_name).player_name %></td>
+</tr> 
+<tr>
+  <td>先</td>
+  <td>投</td>
+  <td><%= @players.find(best_nine.starting).player_name %></td>
+</tr>
+<tr>
+  <td>中</td>
+  <td>投</td>
+  <td><%= @players.find(best_nine.relief).player_name %></td>
+</tr>
+<tr>
+  <td>抑</td>
+  <td>投</td>
+  <td><%= @players.find(best_nine.closer).player_name %></td>
+</tr>
