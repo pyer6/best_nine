@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   resources :users
-  resources :best_nines,  only: [:new, :create, :show, :destroy]
+  resources :best_nines,  only: [:new, :create, :show, :destroy] do
+    collection do
+      post 'confirm'
+    end
+  end
+
 end

@@ -1,2 +1,2 @@
-class Player < ApplicationRecord
+class Player < ApplicationRecord  
 end

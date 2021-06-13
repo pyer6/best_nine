@@ -1,14 +1,8 @@
 <% provide(:title, "ホーム") %>
-<%# provide(:best_nine, bestnine) %>
 
 <div class="row">
   <div class="center jumbotron">
-    <h1>マイナイン</h1>
-    <% if logged_in? %>
-      <%= link_to "マイナイン作成", "#" %>
-    <% else %>
-      <%= link_to "ログイン", login_path %>
-    <% end %>
+    <h1>カープベストナイン</h1>
   </div>
 
   <% @best_nines.each do |best_nine| %>

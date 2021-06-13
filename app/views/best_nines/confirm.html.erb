@@ -1,0 +1,14 @@
+<h1>検索結果</h1>
+
+        <% @player_name.each do |player| %>
+          <%= player.player_name %>
+        <% end %>
+
+<div class="row">
+  <%= form_with(model: @bestnine, url: {action: 'one'}, local: true) do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  <% end %>
+
+</div>

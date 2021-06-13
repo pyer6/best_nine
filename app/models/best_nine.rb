@@ -27,4 +27,5 @@ class BestNine < ApplicationRecord
   validates :closer, presence: true
 
   POSITION = {'捕': 2, '一': 3, '二': 4, '三': 5, '遊': 6, '左': 7, '中': 8, '右': 9, 'DH': 10}
+
 end

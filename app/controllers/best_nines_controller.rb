@@ -13,14 +13,20 @@ class BestNinesController < ApplicationController
 
   def new
     @bestnine = BestNine.new
-    @players_fielder = Player.where(field: "F")
-    @players_pitcher = Player.where(field: "P")
+    @players_fielder = Player.where(field: "F").where(team: "C")
+    @players_pitcher = Player.where(field: "P").where(team: "C")
   end
+
+  def confirm
+    @bestnine = BestNine.new(best_nine_params)
+    render :new if @bestnine.invalid?
+  end
+
 
   def create
     @bestnine = BestNine.new(best_nine_params)
-    @players_fielder = Player.where(field: "F")
-    @players_pitcher = Player.where(field: "P")
+    @players_fielder = Player.where(field: "F").where(team: "C")
+    @players_pitcher = Player.where(field: "P").where(team: "C")
 
     # ポジション/選手に重複があるかの確認
     

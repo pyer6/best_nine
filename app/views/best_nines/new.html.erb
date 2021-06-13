@@ -1,7 +1,7 @@
 <h1>マイナイン作成</h1>
 
 <div class="row">
-  <%= form_with(model: @bestnine, local: true) do |f| %>
+  <%= form_with(model: @bestnine, url: {action: 'confirm'}, local: true) do |f| %>
   <%= render 'shared/error_messages', model: f.object %>
     <table border="1">
       <caption><%= f.text_field :title, placeholder: "タイトル" %></caption>
